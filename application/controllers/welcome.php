@@ -26,6 +26,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message', $data);//this is a function inside of a class, therefore it is a method
 		
 	}
+
+	public function rssFeed()
+	{
+		$this->load->model('RssFeed_model');
+		$data['query']=$this->Rssfeed_model->get_rssfeed();
+		$this->load->view('rssFeed');//this is a function inside of a class, therefore it is a method
+		
+	}
+
+
+
 }
 
 /* End of file welcome.php */

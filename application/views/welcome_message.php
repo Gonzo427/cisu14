@@ -73,9 +73,20 @@
 	
 		<?php 
 			foreach($query as $customer)
-				{
-					echo '<code>' . $customer['FirstName'] . '</code>';
-				}
+			{
+			echo '<code>' . $customer['FirstName'] . '</code><br>';
+			}
+			
+		  $request = "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&output=rss&q=green+lake+seattle&tbm=nws";
+		  $response = file_get_contents($request);
+		  $xml = simplexml_load_string($response);
+		  print '<h1>' . $xml->channel->title . '</h1>';
+		  foreach($xml->channel->item as $story)
+		  {
+			echo '<a href="' . $story->link . '">' . $story->title . '</a><br />'; 
+			echo '<p>' . $story->description . '</p><br /><br />';
+		  }
+			
 			
 		?>
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
