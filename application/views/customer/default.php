@@ -1,9 +1,8 @@
 <?php 
 //customer/default.php
 	$this->load->view($this->config->item('theme') . 'header');	
-	foreach($query as $customer)
-	{
-		echo '<code class="row">' . $customer['FirstName'] . '</code><br>';
-	}
+	
+	echo '<h1>Default Customer Page  </h1>';
+	
 	$this->load->view($this->config->item('theme') . 'footer');			
 ?>

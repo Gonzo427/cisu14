@@ -32,4 +32,7 @@
       </div>
     </div>
     <div class="container">
+	<?php 
+		echo bootswatchFeedback(); #will show then clear message stored via feedback() 
+	?>
 

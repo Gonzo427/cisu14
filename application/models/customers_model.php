@@ -11,12 +11,16 @@ class Customers_model extends CI_Model {
 	
 		if((int)$id==0)
 		{//id is zero, show all
-			$query = $this->db->get('test_Customers' );
+			return $this->db->get('test_Customers' );
 		}else{//show one customer
-			$query = $this->db->get_where('test_Customers', array('CustomerID'=>$id)  );
-		}
-		
-		return $query->result_array();
-	}
+			return $this->db->get_where('test_Customers', array('CustomerID'=>$id)  );
+		}	
+	}#end get_customers
+	
+	public function insert()
+	{
+		var_dump($_POST);
+		die;
+	}#end insert
 	
 }
